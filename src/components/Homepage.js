@@ -204,7 +204,7 @@ const Homepage = () => {
                 data-aos-delay="100"
               >
                 <div className="box">
-                  <Link to="/planmyjourney">
+                  <Link to="/bookaticket">
                   <div className="icon" style={{ background: "#eef9fc" }}>
                     <i
                       className="bi bi-ticket"
