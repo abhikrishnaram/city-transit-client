@@ -1,6 +1,7 @@
 import { Autocomplete, TextField } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import MapNearMe from './map/NearMeMap'
 
 const base_url = "https://api.mapbox.com/geocoding/v5/mapbox.places/";
@@ -87,6 +88,7 @@ const FindNearMe = () => {
           </div>
         </div>
       </div>
+        <Link className="btn btn-info position-absolute top-0 end-0 m-5 text-white z-200 fw-bold" to='/'>Home</Link>        
         <MapNearMe data={data}/>
     </div>
   );

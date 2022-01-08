@@ -37,7 +37,8 @@ const PlanACarpool = () => {
                 data-aos="zoom-in"
                 data-aos-delay="100"
               >
-                <div className="c-box">                  
+                <div className="c-box">
+                <Link to={loginState.state?'havearide':'/login'}>            
                   <div className="c-icon" style={{ background: "#fceef3" }}>
                     <i
                       className="bi bi-briefcase"
@@ -50,7 +51,8 @@ const PlanACarpool = () => {
                   <p className="c-description text-black">
                     Voluptatum deleniti atque corrupti quos dolores et quas
                     molestias excepturi sint occaecati cupiditate non provident
-                  </p>                  
+                  </p>         
+                  </Link>         
                 </div>
             </div>
             </div>

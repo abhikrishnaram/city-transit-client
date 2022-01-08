@@ -12,6 +12,7 @@ import HaveACarpool from './components/HaveACarpool'
 import FindNearMe from './components/FindNearMe'
 import RequestAssistance from './components/RequestAssistance';
 import BookATicket from './components/BookATicket'
+import MapComponent from './components/MapComponent';
 const App = () => {  
 
   useEffect(() => {    
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/planacarpool" element={<PlanACarpool />} />
         <Route path="/findmytransit" element={<FindMyTransit />} />
         <Route path="/bookaticket" element={<BookATicket />} />
+        <Route path="/map" element={<MapComponent />} />
         <Route path="/requestassistance" element={<RequestAssistance />} />
         <Route path="/" element={<Homepage />} />
       </Routes>      

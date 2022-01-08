@@ -27,15 +27,12 @@ const DestinationCard = () => {
     setOpen(true)
   };
 
-  if(!loginState.state)
-    window.location.href = "/login"
-
   return (
     <div className="max-vw-100 min-vh-100 bg-custom d-flex justify-content-center align-items-center">
         <Link className="btn btn-info position-absolute top-0 end-0 m-5 text-white fw-bold" to='/'>Home</Link>        
       <div className="row justify-content-start w-100 mt-5">
         <div className="col-md-6 col-lg-4 justify-content-center align-items-center d-flex">
-          <div className="c-box" style={{ transform: "none" }}>
+          <div className="c-box z-200" style={{ transform: "none" }}>
             <div className="c-icon" style={{ background: "#fceef3" }}>
               <i className="bi bi-briefcase" style={{ color: "#ff689b" }}></i>
             </div>
@@ -66,7 +63,7 @@ const DestinationCard = () => {
             </form>
           </div>
         </div>                          
-        <div className="col-md-6 col-lg-7 c-box" style={{ transform: "none" }}>
+        <div className="col-md-6 z-200 col-lg-7 c-box" style={{ transform: "none" }}>
             {data.length>0 && data.map((journey,i) => (
               <div className="border-2 border-info py-3">
                 <div className="h4 fw-bold">Journey Plan {i+1}</div>

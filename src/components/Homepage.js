@@ -204,6 +204,29 @@ const Homepage = () => {
                 data-aos-delay="100"
               >
                 <div className="box">
+                  <Link to="/map">
+                  <div className="icon" style={{ background: "#fcf9ee" }}>
+                    <i
+                      className="bi bi-activity"
+                      style={{ color: "#ecc123" }}
+                    ></i>
+                  </div>
+                  <h4 className="title">
+                    Map
+                  </h4>
+                  <p className="description text-black">
+                    fermentum iaculis eu non diam phasellus.
+                    Scelerisque felis imperdiet proin fermentum leo. Amet                  
+                  </p>
+                  </Link>
+                </div>
+              </div>
+              <div
+                className="col-md-6 col-lg-4 wow bounceInUp"
+                data-aos="zoom-in"
+                data-aos-delay="100"
+              >
+                <div className="box">
                   <Link to="/bookaticket">
                   <div className="icon" style={{ background: "#eef9fc" }}>
                     <i
@@ -215,7 +238,7 @@ const Homepage = () => {
                     Book a Ticket
                   </h4>
                   <p className="description text-black">
-                    fermentum iaculis eu non diam phasellus.
+                    fermentum ia diam phasellus.
                     Scelerisque felis imperdiet proin fermentum leo. Amet
                     volutpatnunc congue.
                   </p>

@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions'
 import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css'
+import { Link } from 'react-router-dom';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
@@ -12,7 +13,7 @@ const MapComponent = () => {
   const directions = new MapboxDirections({
     accessToken: mapboxgl.accessToken,
     unit: 'metric',
-    profile: 'mapbox/driving'
+    profile: 'mapbox/driving',    
   });  
   
   useEffect(() => {    
@@ -34,6 +35,7 @@ const MapComponent = () => {
 
   return( 
     <div>
+      <Link className="btn btn-info position-absolute top-0 end-0 m-5 text-custom bg-white z-200 fw-bold" to='/'>Home</Link>        
       <div className="map-container" ref={mapContainerRef} />
     </div>
     );
