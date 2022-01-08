@@ -9,30 +9,16 @@ import Login from './components/Login';
 import Register from './components/Register';
 import NeedACarpool from './components/NeedACarpool'
 import HaveACarpool from './components/HaveACarpool'
-import { onAuthStateChanged } from 'firebase/auth';
+import FindNearMe from './components/FindNearMe'
 
 const App = () => {  
-
-  const [authUser,setAuthUser] = useState(null);
 
   useEffect(() => {    
     AOS.init({
       duration: 1000,
     });
-    AOS.refresh();
+    AOS.refresh();    
   }, []);
-
-  const authState = async () => {
-    await onAuthStateChanged(
-      (authUser) => {
-        console.log(authUser);        
-        if(authUser) {
-          setAuthUser(authUser);
-        } else {
-          setAuthUser(null);
-        }
-      })
-  }
 
   return( 
     <div>
@@ -40,6 +26,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/planmyjourney" element={<PlanMyJourney />} />
+        <Route path="/findnearme" element={<FindNearMe />} />
         <Route path="/planacarpool/needaride" element={<NeedACarpool/>} />
         <Route path="/planacarpool/havearide" element={<HaveACarpool/>} />
         <Route path="/planacarpool" element={<PlanACarpool />} />

@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import MapComponent from './MapComponent'
 import DestinationCard from './DestinationCard'
 
-const PlanMyJourney = () => {
+const PlanMyJourney = () => {   
     return (
         <div>
-            <MapComponent/>
-            <DestinationCard />
+            <DestinationCard/>
+            {/* <MapComponent/>             */}
         </div>
     )
 }

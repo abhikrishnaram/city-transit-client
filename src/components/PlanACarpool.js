@@ -15,7 +15,7 @@ const PlanACarpool = () => {
                 data-aos-delay="100"
               >
                 <div className="c-box">                  
-                    <Link to={loginState?'needaride':'/login'}>
+                    <Link to={loginState.state?'needaride':'/login'}>
                   <div className="c-icon" style={{ background: "#fceef3" }}>
                     <i
                       className="bi bi-briefcase"

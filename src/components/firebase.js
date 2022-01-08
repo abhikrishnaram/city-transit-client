@@ -19,12 +19,11 @@ const analytics = getAnalytics(app);
 
 export const auth = getAuth()
 
-export const getLoginState = async () => {
-    await onAuthStateChanged(auth, (user) => {
-        if (user) {                            
-          return true
+export const getLoginState = () => { 
+        if (auth.currentUser!==null) {
+          console.log(auth.currentUser)                                   
+          return {state:true, data:auth.currentUser}
         } else {
-          return false
-        }
-      });
+          return {state:false, data:null}
+        }      
 }
