@@ -19,18 +19,22 @@ const RequestAssistance = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const assistance = {
-      title : title,
+    const block = {      
       location: val1.b,
       description: description,
-      vehicle_no: vehicleno,
-      contact_no: contactno,
       uid: loginState?.user?.uid || "asdasdasd"
     }
 
-    axios.post(`${process.env.REACT_APP_SERVER_URL}/reqestassistance`, assistance)
+    axios.post(`${process.env.REACT_APP_SERVER_URL}/reportblockage`, block)
     .then(response => {setOpen(true); console.log(response);});
-     
+    
+    // title
+    // location
+    // description
+    // vehicle_no
+    // contact_no
+    // date
+    // uid   
   };
   return (
     <div className="max-vw-100 min-vh-100 bg-custom d-flex justify-content-center align-items-center">
@@ -41,7 +45,7 @@ const RequestAssistance = () => {
           onClose={()=>setOpen(false)}          
         >
         <Alert severity="success" sx={{ width: '100%' }}>
-            <b>Assist Requested </b>
+            <b>Blockage reported. Thank you! </b>
         </Alert>
       </Snackbar>
       <div className="row w-100 justify-content-center">
@@ -54,9 +58,8 @@ const RequestAssistance = () => {
             <div className="c-icon" style={{ background: "#fceef3" }}>
               <i className="bi bi-briefcase" style={{ color: "#ff689b" }}></i>
             </div>
-            <h4 className="c-title">I Need a Assistance</h4>
+            <h4 className="c-title">Report Road Block</h4>
             <form onSubmit={handleSubmit} className="justify-content-start d-flex flex-column">
-              <TextField className="my-2" label="Title" onChange={(e)=>setTitle(e.target.value)}/>
               <Autocomplete
                 disablePortal
                 className="my-2"
@@ -65,17 +68,15 @@ const RequestAssistance = () => {
                 options={stations}
                 getOptionLabel={(option) => option.b}
                 sx={{ width: 300 }}
-                renderInput={(params) => <TextField {...params} label="Your location" />}
+                renderInput={(params) => <TextField {...params} label="Block locality" />}
               />
               <TextareaAutosize                
                 placeholder="Description of event"
-                className="my-2"
+                className="my-2 mb-3"
                 onChange={(e)=>setdescription(e.target.value)}
                 minRows={3}
-              />
-              <TextField className="my-2" label="Vehicle no:" onChange={(e)=>setvehicleno(e.target.value)}/>
-              <TextField className="mb-3" label="Contact no:" onChange={(e)=>setcontactno(e.target.value)}/>
-              <button className="btn btn-custom">Request Assistance</button>
+              />              
+              <button className="btn btn-custom">Report Block</button>
             </form>
           </div>
         </div>

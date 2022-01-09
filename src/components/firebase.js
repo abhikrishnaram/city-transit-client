@@ -22,7 +22,7 @@ export const auth = getAuth()
 
 export const getLoginState = () => { 
         if (auth.currentUser!==null) {
-          console.log(auth.currentUser)                                   
+          // console.log(auth.currentUser)                                   
           return {state:true, data:auth.currentUser}
         } else {
           return {state:false, data:null}

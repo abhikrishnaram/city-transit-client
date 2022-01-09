@@ -21,10 +21,22 @@ const DestinationCard = () => {
     const res = await axios.get(
       `https://api.tfl.gov.uk/Journey/JourneyResults/${val1.a}/to/${val2.a}`
     );
-    console.log(res.data);
+        
     setData(res.data.journeys);
-    setTotCost(data[0]?.fare?.totalCost || Math.floor(Math.random() * 1000));
-    setOpen(true)
+    setTotCost(data[0]?.fare?.totalCost || Math.floor(Math.random() * 1000));    
+
+    const book = {
+      duration: res.data.journeys[0].duration,
+      uid : loginState?.user?.uid || "asdasdasd",
+      from: val1.b,
+      to: val2.b,
+      cost: data[0]?.fare?.totalCost || Math.floor(Math.random() * 1000),
+      from_id: val1.a,
+      to_id: val2.a
+    }
+
+    axios.post(`${process.env.REACT_APP_SERVER_URL}bookjourney`, book)
+      .then(response => {setOpen(true); console.log(response);});    
   };
 
   if(!loginState.state)

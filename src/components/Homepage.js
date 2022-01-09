@@ -299,7 +299,7 @@ const Homepage = () => {
                 data-aos-delay="100"
               >
                 <div className="box">
-                  <Link to="/planmyjourney">
+                  <Link to="/requestassistance">
                   <div className="icon" style={{ background: "#eafde7" }}>
                     <i
                       className="bi bi-binoculars"
@@ -323,7 +323,7 @@ const Homepage = () => {
                 data-aos-delay="200"
               >
                 <div className=" box">
-                  <Link to="planmyjourney">
+                  <Link to="/reportblock">
                   <div className="icon" style={{ background: "#e1eeff" }}>
                     <i
                       className="bi bi-brightness-high"
@@ -369,7 +369,7 @@ const Homepage = () => {
                 data-aos-delay="300"
               >
                 <div className="box">
-                  <Link to="planmyjourney">
+                  <Link to="/mycarbonprint">
                   <div className="icon" style={{ background: "#ebffee" }}>
                     <i
                       className="bi bi-bezier"

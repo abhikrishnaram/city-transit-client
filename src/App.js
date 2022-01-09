@@ -11,8 +11,10 @@ import NeedACarpool from './components/NeedACarpool'
 import HaveACarpool from './components/HaveACarpool'
 import FindNearMe from './components/FindNearMe'
 import RequestAssistance from './components/RequestAssistance';
+import ReportBlock from './components/ReportBlock';
 import BookATicket from './components/BookATicket'
 import MapComponent from './components/MapComponent';
+import MyCarbonPrint from './components/MyCarbonPrint'
 const App = () => {  
 
   useEffect(() => {    
@@ -36,6 +38,8 @@ const App = () => {
         <Route path="/bookaticket" element={<BookATicket />} />
         <Route path="/map" element={<MapComponent />} />
         <Route path="/requestassistance" element={<RequestAssistance />} />
+        <Route path="/mycarbonprint" element={<MyCarbonPrint />} />
+        <Route path="/reportblock" element={<ReportBlock />} />
         <Route path="/" element={<Homepage />} />
       </Routes>      
     </div>

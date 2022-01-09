@@ -17,7 +17,7 @@ const Login = () => {
                 // Signed in 
                 const user = userCredential.user;
                 console.log(user);
-                sessionStorage.setItem('city-tranit', userCredential)
+                localStorage.setItem('city-tranit', userCredential.user.uid)
                 navigate(from, { replace: true });
             })
             .catch((error) => {
